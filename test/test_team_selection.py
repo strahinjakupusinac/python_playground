@@ -4,7 +4,9 @@ Created on Sep 29, 2013
 @author: Strahinja
 '''
 import unittest
-from src.TeamSelection import TeamSelection
+import src.team_selection
+from src.team_selection import TeamSelection
+from src import team_selection
 
 
 class Test(unittest.TestCase):
@@ -46,7 +48,7 @@ class Test(unittest.TestCase):
         actualResult = ts.simulate(preference1, preference2)
         print(actualResult)
         self.assertEqual(actualResult, expectedResult, actualResult)
-                
+    
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
