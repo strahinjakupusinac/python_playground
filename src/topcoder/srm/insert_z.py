@@ -17,7 +17,7 @@ class InsertZ(object):
 
     
     def CanTransfor(self, init, goal):
-        if goal.replace('z','') == init:
+        if goal.replace('z','') == init.replace('z',''):
             return "Yes"
         else:
             return "No"

@@ -42,6 +42,36 @@ class Test(unittest.TestCase):
         change = self.ap.minimumChange(a,b,c)
         self.assertEqual(change, expectedChange)
         
+    def testCase5(self):
+        a,b,c = -4,-2,0
+        expectedChange = 0.0
+        change = self.ap.minimumChange(a,b,c)
+        self.assertEqual(change, expectedChange)
+        
+    def testCase6(self):
+        a,b,c = -4,0,4
+        expectedChange = 0.0
+        change = self.ap.minimumChange(a,b,c)
+        self.assertEqual(change, expectedChange)
+
+    def testCase7(self):
+        a,b,c = 8,16,9
+        expectedChange = 7.5
+        change = self.ap.minimumChange(a,b,c)
+        self.assertEqual(change, expectedChange)
+
+    def testCase8(self):
+        a,b,c = -4,-6,-8
+        expectedChange = 0.0
+        change = self.ap.minimumChange(a,b,c)
+        self.assertEqual(change, expectedChange)
+
+    def testCase9(self):
+        a,b,c = -6,-2,-1
+        expectedChange = 1.5
+        change = self.ap.minimumChange(a,b,c)
+        self.assertEqual(change, expectedChange)
+    
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()

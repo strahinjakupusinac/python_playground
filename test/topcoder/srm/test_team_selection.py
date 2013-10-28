@@ -4,9 +4,7 @@ Created on Sep 29, 2013
 @author: Strahinja
 '''
 import unittest
-import src.team_selection
-from src.team_selection import TeamSelection
-from src import team_selection
+from src.topcoder.srm.team_selection import TeamSelection
 
 
 class Test(unittest.TestCase):

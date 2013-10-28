@@ -58,7 +58,12 @@ class TestInsertZ(unittest.TestCase):
         expectedResult = "No"
         self.assertEqual(self.iz.CanTransfor(init, goal), expectedResult)
         
-                    
+    def testCase7(self):
+        init = "pazaz"
+        goal = "pazazz"
+        expectedResult = "Yes"
+        self.assertEqual(self.iz.CanTransfor(init, goal), expectedResult)
+                   
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
