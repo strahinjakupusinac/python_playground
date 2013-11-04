@@ -1,24 +1,32 @@
+# -*- coding: utf-8 -*-
 '''
 Created on Oct 31, 2013
 
 @author: Strahinja
 '''
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort
 
 app = Flask(__name__)
 
-names = ["Laza", "Pera", "Mika", "Zika"]
+names = []
 
-@app.route("/names/", methods=['GET'])
+@app.route("/names", methods=["GET"])
 def getNames():
-    return jsonify({ 'tasks': names })
+    return jsonify({"names":names})
 
 
-@app.route("/names/", methods=['PUT'])
+@app.route("/names", methods=["PUT"])
 def addName():
-    names.append(request.json["name"])
-    return jsonify({ 'result': "ok"})
+    names.append(request.json)
+    return jsonify({"result":"ok"})
 
+
+@app.route("/forward", methods=["POST"])
+def forward():
+    if not request.json:
+        abort(400)
+    return jsonify(request.json)
+    
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
     
